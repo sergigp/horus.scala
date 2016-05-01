@@ -33,10 +33,16 @@ class AcceptanceSpec extends WordSpec
   val host       = s"localhost:$port"
 
   def userCreationUrl(userId: UserId) = s"http://$host/users/${userId.value.toString}"
+  def userSearchUrl(userId: UserId) = s"http://$host/users/${userId.value.toString}"
 
   def httpCreateUserCall(userId: UserId, userName: UserName): WSResponse = {
     Await.result(httpClient.url(userCreationUrl(userId))
       .post(JsObject(Seq("user_name" -> JsString(userName.value)))), 5.seconds)
+  }
+
+  def httpSearchUserCall(userId: UserId): WSResponse = {
+    Await.result(httpClient.url(userSearchUrl(userId))
+        .get(), 5.seconds)
   }
 
   def httpCreateUserCallWithoutUserName(userId: UserId): WSResponse = {
