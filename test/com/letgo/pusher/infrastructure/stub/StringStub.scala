@@ -1,4 +1,4 @@
-package com.letgo.pusher.infrastructure
+package com.letgo.pusher.infrastructure.stub
 
 import scala.util.Random
 
