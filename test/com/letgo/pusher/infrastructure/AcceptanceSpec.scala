@@ -1,4 +1,4 @@
-package com.sergigp.horus.infrastructure
+package com.letgo.pusher.infrastructure
 
 import javax.inject.Inject
 

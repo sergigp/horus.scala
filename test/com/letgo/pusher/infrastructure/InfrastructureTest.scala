@@ -1,13 +1,12 @@
-package com.sergigp.horus.infrastructure
+package com.letgo.pusher.infrastructure
 
 import play.api.inject.Injector
 import play.api.inject.guice.GuiceApplicationBuilder
 
-import com.sergigp.horus.domain.model.UserRepository
 import org.scalatest._
 import org.scalatest.concurrent.ScalaFutures
 
-class PersistenceTest extends WordSpec
+class InfrastructureTest extends WordSpec
   with Matchers
   with OptionValues
   with ScalaFutures
@@ -17,9 +16,5 @@ class PersistenceTest extends WordSpec
 
   override def beforeEach() {
     injector = new GuiceApplicationBuilder().injector
-    EnvironmentArranger.cleanDatabase(injector)
   }
-
-  // @TODO maybe instantiate repo instead delegate to injector?
-  def userRepository = injector.instanceOf[UserRepository]
 }

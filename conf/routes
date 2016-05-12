@@ -1,2 +1,2 @@
-POST   /users/:userId        @com.sergigp.horus.controllers.UserController.post(userId: String)
-GET   /users/:userId        @com.sergigp.horus.controllers.UserController.get(userId: String)
+POST   /users/:userId        @com.letgo.pusher.controllers.PushController.post
+GET   /status                @com.letgo.pusher.controllers.StatusController.get
