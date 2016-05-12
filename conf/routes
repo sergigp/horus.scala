@@ -1,2 +1,2 @@
-POST   /users/:userId        @com.letgo.pusher.controllers.PushController.post
-GET   /status                @com.letgo.pusher.controllers.StatusController.get
+POST  /push        @com.letgo.pusher.controllers.PushController.post
+GET   /status      @com.letgo.pusher.controllers.StatusController.get

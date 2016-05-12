@@ -9,7 +9,7 @@ import play.api.mvc._
 
 class PushController @Inject()() {
 
-  def post(userId: String) = Action.async { request =>
+  def post() = Action.async { request =>
     Future.successful(Ok)
   }
 }
