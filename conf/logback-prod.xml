@@ -1,0 +1,48 @@
+<configuration>
+
+    <conversionRule conversionWord="coloredLevel" converterClass="play.api.Logger$ColoredLevel"/>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%coloredLevel - %logger - %message%n%xException</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/var/log/pusher/pusher-app.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>/var/log/pusher/application-log-%d{yyyy-MM-dd}.gz</fileNamePattern>
+            <maxHistory>10</maxHistory>
+        </rollingPolicy>
+        <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+            <providers>
+                <timestamp/>
+                <version/>
+                <loggerName/>
+                <message/>
+                <stackTrace/>
+                <pattern>
+                    <pattern>
+                        { "level": "%level" }
+                    </pattern>
+                </pattern>
+            </providers>
+        </encoder>
+    </appender>
+
+    <!--
+      The logger name is typically the Java/Scala package name.
+      This configures the log level to log at for a package and its children packages.
+    -->
+    <logger name="play" level="WARN"/>
+    <logger name="akka" level="INFO"/>
+    <logger name="com.letgo.pusher" level="WARN"/>
+    <logger name="kamon.logreporter" level="WARN"/>
+
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="FILE"/>
+    </root>
+
+</configuration>
