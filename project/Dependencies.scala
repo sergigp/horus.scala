@@ -11,5 +11,6 @@ object Dependencies {
   object Testing {
     val scalatestplusPlay = "org.scalatestplus.play" %% "scalatestplus-play" % "1.5.0" % Test
     val scalamock = "org.scalamock" %% "scalamock-scalatest-support" % "3.2.2" % Test
+    val pprint = "com.lihaoyi" %% "pprint" % "0.4.0"
   }
 }

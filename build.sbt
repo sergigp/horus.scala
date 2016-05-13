@@ -23,7 +23,8 @@ libraryDependencies ++= Seq(
   Dependencies.Production.aspectjweaver,
 
   Dependencies.Testing.scalatestplusPlay,
-  Dependencies.Testing.scalamock
+  Dependencies.Testing.scalamock,
+  Dependencies.Testing.pprint
 )
 
 // Common commands aliases
