@@ -1,18 +1,29 @@
+/** *****************************************/
+/** ********* PROJECT INFO ******************/
+/** *****************************************/
 name := "pusher"
-
 version := "1.0"
 
-scalaVersion := "2.11.8"
-
+/** *********************************************/
+/** ********* PROJECT SETTINGS ******************/
+/** *********************************************/
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
+/** *****************************************/
+/** ********* DEPENDENCIES ******************/
+/** *****************************************/
+scalaVersion := "2.11.8"
+
+// Resolvers
+resolvers += Resolver.bintrayRepo("dwhjames", "maven") // awsWrap
+
 libraryDependencies ++= Seq(
-  "org.scalatestplus.play" %% "scalatestplus-play" % "1.5.0" % "test",
-  "org.scalamock" %% "scalamock-scalatest-support" % "3.2.2" % "test",
-  "ch.qos.logback" % "logback-classic" % "1.1.3",
-  "net.logstash.logback" % "logstash-logback-encoder" % "4.6",
-  "org.aspectj" % "aspectjweaver" % "1.8.7"
-  // @TODO Kamon
+  Dependencies.Production.logback,
+  Dependencies.Production.logstash,
+  Dependencies.Production.aspectjweaver,
+
+  Dependencies.Testing.scalatestplusPlay,
+  Dependencies.Testing.scalamock
 )
 
 // Common commands aliases
