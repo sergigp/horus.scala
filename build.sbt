@@ -18,6 +18,9 @@ libraryDependencies ++= Seq(
 // Common commands aliases
 addCommandAlias("t", "test")
 addCommandAlias("to", "testOnly")
+addCommandAlias("ta", "testOnly com.letgo.pusher.tests.acceptance.*")
+addCommandAlias("tb", "testOnly com.letgo.pusher.tests.behaviour.*")
+addCommandAlias("ti", "testOnly com.letgo.pusher.tests.infrastructure.*")
 addCommandAlias("tq", "testQuick")
 addCommandAlias("tsf", "testShowFailed")
 
