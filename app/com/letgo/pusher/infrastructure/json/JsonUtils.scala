@@ -7,7 +7,7 @@ import play.api.libs.json.{Json, JsValue, Reads, Writes}
 object JsonUtils {
   def safeParse(toParse: String): Option[JsValue] = Try(Json.parse(toParse)).toOption
 
-  def safeCast[T: Reads](toCast: JsValue): Option[T] = toCast.asOpt[T]
+  def safeCast[T: Reads](toCast: JsValue): Option[T] = Try(toCast.as[T]).toOption
 
   def safeCast[T: Reads](toParse: String): Option[T] = safeParse(toParse).flatMap(_.asOpt[T])
 
