@@ -5,7 +5,7 @@
     * `curl https://bintray.com/sbt/rpm/rpm | sudo tee /etc/yum.repos.d/bintray-sbt-rpm.repo`
     * `yum install sbt`
 * Install Git: `yum install git`
-* Clone this repo: `git clone https://github.com/letgoapp/chat.git .`
+* Clone this repo: `git clone https://github.com/letgoapp/pusher.git .`
 * Run SBT: `sbt`
 
 ## SBT
@@ -17,7 +17,7 @@ Once you install SBT, run `sbt sbtVersion` in order to resolve all the dependenc
 ## Git hooks
 First of all, you'll need to setup the git hooks from your local environment.
 In order to do that, just adapt and execute the following commands from the host machine:
-* `cd ~/your/chat/repository/path`
+* `cd ~/your/pusher/repository/path`
 * `rm -rf .git/hooks`
 * `ln -s ../doc/hooks .git/hooks`
 * `sudo chmod -R 777 doc/hooks/*`
