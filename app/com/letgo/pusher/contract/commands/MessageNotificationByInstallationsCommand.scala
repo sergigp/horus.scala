@@ -7,7 +7,7 @@ import com.letgo.pusher.domain.shared.ClientNotification.UnreadClientNotificatio
 import com.letgo.pusher.domain.shared.Installation.Installation
 import com.letgo.pusher.domain.shared.Notification.NotificationId
 import com.letgo.pusher.domain.shared.Product.ProductId
-import com.letgo.pusher.infrastructure.contract.Command
+import com.letgo.pusher.infrastructure.cqrs.Command
 
 case class MessageNotificationByInstallationsCommand(
   notificationId: NotificationId,

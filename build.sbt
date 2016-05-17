@@ -21,6 +21,8 @@ libraryDependencies ++= Seq(
   Dependencies.Production.logback,
   Dependencies.Production.logstash,
   Dependencies.Production.aspectjweaver,
+  Dependencies.Production.guice,
+  Dependencies.Production.scalaGuice,
 
   Dependencies.Testing.scalatestplusPlay,
   Dependencies.Testing.scalamock,
